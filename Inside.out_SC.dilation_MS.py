@@ -1,8 +1,14 @@
 # -*- coding: utf-8 -*-
 """
+The purpose of this script is to compute the average metrix within a mask. The mask is growing outward at each iteration.
 
-Compute the average of a given 3D field (e.g. SUV) as a function of distance
-to a structure (e.g. lateral ventricule) defined by a mask.
+Algorithm:
+- Generate spinal cord segmentation --> SCseg
+- Manually create a 2-pixel mask at the center of the spinal canal.
+- For each new iteration: 
+  - The size of the mask increases by one pixel, using 2D dilation. 
+  - We compute the intersection between the dilated mask and the SCseg --> MaskIntersect
+  - We compute the average voxel values within MaskIntersect
 
 At each step, the mask is dilated by a ball of radius 1, then we substract
 the previous step to get only a ring.
