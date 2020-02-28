@@ -1,4 +1,5 @@
 #!/bin/bash
+# This script is eroding the T2seg manual mask from the outside inwards.
 
 #FOLDER REFERENCES
 Data="/Users/raouelletteiv/Research/7T_Spinal_Brain_Study/Data/Spinal_data/"
