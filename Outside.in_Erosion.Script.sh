@@ -10,17 +10,17 @@ for ID in MS088_R01_20_sup; do
 #MS073_R01_05_inf MS073_R01_05_sup MS079_R01_11_inf MS079_R01_11_sup MS081_R01_13_inf MS081_R01_13_sup MS084_R01_16_sup MS088_R01_20_inf MS088_R01_20_mid MS088_R01_20_sup MS089_R01_29_inf MS089_R01_29_sup MS091_R01_22_inf MS091_R01_22_sup MS093_R01_24_sup MS095_R01_26_inf MS095_R01_26_sup MS096_R01_27_inf MS096_R01_27_sup MS100_R01_32_inf MS100_R01_32_sup MS101_R01_33_inf MS101_R01_33_sup MS102_R01_34_inf MS102_R01_34_sup MS103_R01_35_inf MS103_R01_35_sup MS104_R01_36_inf MS104_R01_36_sup NIMMS01_inf NIMMS01_mid NIMMS01_sup NIMMS02_inf NIMMS02_sup NIMMS03_sup NIMMS04_inf NIMMS04_sup NIMMS05_inf NIMMS05_sup NIMMS06_sup NIMMS07_inf NIMMS07_sup NIMMS08_inf NIMMS08_sup NIMMS09_inf NIMMS09_sup NIMMS10_inf NIMMS10_sup NIMMS11_inf NIMMS11_sup; do
 #for PATIENT_ID in ; do
 
-#Proprocessing
-cd ${Data}/${ID}/;
-mkdir Eroded.Lesion.Mapping/;
-cp ${Data}/${ID}/t2s_crop.nii.gz ${Data}/${ID}/Eroded.Lesion.Mapping/t2s_crop.nii.gz;
-cp ${Data}/${ID}/t2s_seg_manual.nii.gz ${Data}/${ID}/Eroded.Lesion.Mapping/t2s_seg_manual.nii.gz;
-cp ${Data}/${ID}/t2s_lesion.nii.gz ${Data}/${ID}/Eroded.Lesion.Mapping/t2s_lesion.nii.gz;
-cp ${Data}/${ID}/t2s_crop_gmseg.nii.gz ${Data}/${ID}/Eroded.Lesion.Mapping/t2s_crop_gmseg.nii.gz;
-cp ${Data}/${ID}/t2s_crop_wmseg.nii.gz ${Data}/${ID}/Eroded.Lesion.Mapping/t2s_crop_wmseg.nii.gz;
+  #Proprocessing
+  cd ${Data}/${ID}/;
+  mkdir Eroded.Lesion.Mapping
+# cp ${Data}/${ID}/t2s_crop.nii.gz ${Data}/${ID}/Eroded.Lesion.Mapping/t2s_crop.nii.gz;
+# cp ${Data}/${ID}/t2s_seg_manual.nii.gz ${Data}/${ID}/Eroded.Lesion.Mapping/t2s_seg_manual.nii.gz;
+# cp ${Data}/${ID}/t2s_lesion.nii.gz ${Data}/${ID}/Eroded.Lesion.Mapping/t2s_lesion.nii.gz;
+# cp ${Data}/${ID}/t2s_crop_gmseg.nii.gz ${Data}/${ID}/Eroded.Lesion.Mapping/t2s_crop_gmseg.nii.gz;
+# cp ${Data}/${ID}/t2s_crop_wmseg.nii.gz ${Data}/${ID}/Eroded.Lesion.Mapping/t2s_crop_wmseg.nii.gz;
 
-mri_binarize --i t2s_crop_wmseg.nii.gz  --min 0.5 --max 1.0 --binval 1 --o ${Data}/${ID}/Eroded.Lesion.Mapping/WM.seg.binary.nii.gz;
-mri_binarize --i t2s_crop_gmseg.nii.gz  --min 0.5 --max 1.0 --binval 1 --o ${Data}/${ID}/Eroded.Lesion.Mapping/GM.seg.binary.nii.gz;
+# mri_binarize --i t2s_crop_wmseg.nii.gz  --min 0.5 --max 1.0 --binval 1 --o ${Data}/${ID}/Eroded.Lesion.Mapping/WM.seg.binary.nii.gz;
+# mri_binarize --i t2s_crop_gmseg.nii.gz  --min 0.5 --max 1.0 --binval 1 --o ${Data}/${ID}/Eroded.Lesion.Mapping/GM.seg.binary.nii.gz;
 
 #I. RUN EROSIONS 1-20
 cd ${Data}/${ID}/Eroded.Lesion.Mapping/;
