@@ -1,6 +1,7 @@
 # cord-erosion
 Pipeline to erode the spinal cord mask in order to quantify MS lesions from the subpial surface.
 
+## SCT dependencies
 This pipeline was tested on SCT commit e5eee1f18f4cc3655dc42c565ffac5b2453af2d1,
 which can be installed as follows:
 ~~~
